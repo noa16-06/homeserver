@@ -2,6 +2,30 @@
 
 Hello, I am Noa (binary) and today I show you my homeserver, what runs on it and so on.
 
+## Architecture
+
+```
+                        ┌──────────────────────────────────────────┐
+                        │        Sony Vaio Laptop (2010)           │
+                        │        OS: Debian (stable)               │
+                        │                                          │
+  ┌───────────┐         │  ┌─────────────┐    ┌────────────────┐   │
+  │  Internet │◄────────┤  │  Wireguard  │    │   Portainer    │   │
+  └───────────┘         │  │    (VPN)     │    │  (Management)  │   │
+        ▲               │  └─────────────┘    └────────────────┘   │
+        │               │                                          │
+  ┌─────┴─────┐         │  ┌─────────────┐    ┌────────────────┐   │
+  │  Remote   │◄────────┤  │   Ollama    │    │   Cash-App     │   │
+  │  Access   │  VPN    │  │ (qwen2.5)   │◄──►│  (Self-made)   │   │
+  └───────────┘         │  └─────────────┘    └────────────────┘   │
+                        │                                          │
+                        │  ┌─────────────┐                         │
+                        │  │  CPU-Miner  │  ◄── not getting rich   │
+                        │  │  (Bitcoin)  │      but it's honest    │
+                        │  └─────────────┘      work               │
+                        └──────────────────────────────────────────┘
+```
+
 ### First of all the OS
 
 I wanted a stable OS and on my old homeserver it ran on Ubuntu. It was okay but I had problems with Docker and the hardware
@@ -37,8 +61,22 @@ I was really bored so what is the normal thing to do? Run a Bitcoin miner on a 2
 Maybe I get a second homeserver to care about (btw while I write this I am 15 and I still have a really good hairline, hopefully still with 18) and 
 make the smart home really smart, maybe like Albert Einstein or Socrates... nahh not like Socrates, then it will question everything.
 
+## What I learned
+
+- **Linux Administration** – Setting up and maintaining a Debian server, managing users, services, and troubleshooting hardware from 2010
+- **Docker & Containerization** – Running and orchestrating multiple containers, writing Dockerfiles, managing volumes and networks
+- **Networking & VPN** – Configuring Wireguard, port forwarding, understanding NAT, DNS, and secure remote access
+- **AI/LLM Integration** – Running local LLMs with Ollama and integrating them into my own application for receipt parsing
+- **Full-Stack Development** – Building Cash-App from scratch: backend, frontend, LLM integration, and rule-based parsing
+- **Security** – Learning about VPNs, network security, and developing security tools (check out Scry)
+
+The biggest takeaway: you don't need expensive hardware to learn real infrastructure skills. A 14-year-old laptop and curiosity go a long way.
+
+---
+
 That's it actually, I give you the links to the repos here :D
 
 Cash App - Not public, still in dev, soon hopefully
+Scry - https://github.com/noa16-06/scry
 Portainer - https://www.portainer.io/
 Wireguard VPN - https://www.wireguard.com/
